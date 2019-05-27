@@ -1,0 +1,215 @@
+\documentclass[paper=a4,fontsize=11pt]{scrartcl}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+\textheight=700px                        % Saving trees ;-)
+\usepackage{url}
+
+\usepackage{indentfirst}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%	                   % Change font of \section command
+\usefont{OT1}{phv}{b}{n}%	   % bch-b-n: CharterBT-Bold font
+\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}		% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{Chaplygin Andrey}
+\MySlogan{Curriculum Vitae}
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Personal details}{}
+
+%\PersonalEntry{Birth}{January 1, 1980}
+\PersonalEntry{Address}{Moscow, Russia}
+\PersonalEntry{Phone}{+79651818175}
+\PersonalEntry{Email}{\url{achaplygin99@gmail.com}}
+\PersonalEntry{Github}{\url{https://github.com/Andrcraft9}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry{MSc.}{2017-2019}{Lomonosov Moscow State University}
+{Faculty of Computational Mathematics and Cybernetics, 
+Department of Computational Technologies and Modeling.
+
+{\bf Thesis: Load balancing method using Hilbert space-filling curves for INMOM
+(Institute of Numerical Mathematics Ocean Model)}}
+\sepspace
+
+\EducationEntry{BSc.}{2013-2017}{Lomonosov Moscow State University}
+{Faculty of Computational Mathematics and Cybernetics, 
+Department of Computational Technologies and Modeling.
+
+{\bf Thesis: Implementation of parallel INMOM (Institute of Numerical Mathematics Ocean Model) ocean circulation model}}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Work experience}{}
+
+\EducationEntry{Schlumberger}{2016-2019}{Researcher, Part-time} %Researcher-Intern
+{
+\begin{itemize}
+ \item
+ %We looked at energetic driven pumping. 
+ We simulated multiphase incompressible/compressible flow in cylindrical tube using OpenFoam and compared different numerical schemes and algorithms.
+ 
+ \item We developed the simulator FastRadialHF for the initiation and propagation hydraulic fractures. 
+A model of high injection rate hydraulic fractures driven by wellbore pressure pulse was developed. 
+%The model describes a fully coupled wellbore-fracture system with turbulent fluid friction and compressibility.
+An efficient nonlinear solver was implemented for the fully coupled multiphysics matrix.
+The influence of wellbore energy source parameters on fracture characteristics was studied.
+%Simulating fast extension hydraulic fractures, .
+\end{itemize}
+
+}
+\sepspace
+
+\EducationEntry{Geometric Modeling and Interactive Systems Research Group at the CMC faculty of LMSU}{2015-2016}{C++ Developer, Part-time}
+{Developing the software for visualization of navigation satellite groups motion.
+Software allows to observe the simulated work of the GLONASS system, 
+where orbital satellite groups and ground stations were displayed 
+using computer graphics and modern methods of mathematical modeling.}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+
+%\SkillsEntry{Languages}{Russian (mother tongue)}
+%\SkillsEntry{}{English (not fluent)}
+%\SkillsEntry{Software}{\textsc{Matlab}, \LaTeX, \textsc{Ansys}, \textsc{Comsol}}
+\SkillsEntry{Programming Languages}{\textsc{C++/C}, \textsc{Fortran}, \textsc{Python}, \textsc{Wolfram Mathematica}}
+\sepspace
+
+\SkillsEntry{Parallel Computing}{\textsc{MPI}, \textsc{OpenMP}, \textsc{CUDA}}
+\sepspace
+
+\SkillsEntry{Computer Graphics}{\textsc{OpenSceneGraph}, \textsc{OpenGL}}
+\sepspace
+
+\SkillsEntry{Other}{\textsc{Git}, \LaTeX, \textsc{Qt}, \textsc{PETSc},  \textsc{OpenFoam}, \textsc{Lapack/BLAS}}
+
+%%% ------------------------------------------------------------
+%\newpage
+\NewPart{Publications}{}
+
+Chaplygin A.V., Diansky N.A., and Gusev A.V. 
+
+Load balancing using Hilbert space-filling curves for parallel shallow water simulations.
+\textit{Numerical methods and programming. Vol.20, 2019.}
+\sepspace
+
+Diansky N.A, Fomin V.V., Grigoriev A.V., Chaplygin A.V., Zatsepin A.G.
+
+Spatial-Temporal Variability of Inertial Currents
+in the Eastern Part of the Black Sea in a Storm Period.
+\textit{Physical Oceanography. Vol.26, Iss.2, 2019.}
+\sepspace
+
+Maxim Chertov, Andrey Chaplygin.
+
+Evaluating characteristics of high-rate hydraulic fractures driven by wellbore energy source.
+\textit{Engineering Fracture Mechanics. Submitted.}
+
+\NewPart{Presentations}{} % Conferences
+
+Chaplygin A.V., Diansky N.A., and Gusev A.V. 
+
+%Параллельное моделирование нелинейных уравнений мелкой воды. 
+Parallel modeling of nonlinear shallow water equations.
+%Труды 60-й Всероссийской научной конференции МФТИ, 2017
+\textit{60th MIPT Scientific Conference, 2017.}
+\sepspace
+
+Anatoly Gusev, Andrey Chaplygin, Nikolay Diansky. 
+
+A full free surface ocean general circulation model in sigma-coordinates for simulation of the World Ocean circulation and its variability. 
+\textit{EGU General Assembly 2019} %Geophysical Research Abstracts Vol. 21 
+\sepspace
+
+Fomin V.V., Diansky N.A., Chaplygin A.V.
+
+Calculation of extreme surge in the Taganrog Bay and the use of atmospheric and ocean circulation models of different spatial resolution.
+%Расчет экстремальных нагонов в Таганрогском заливе и использование моделей циркуляции атмосферы и океана различного пространственного разрешения.
+\textit{International Scientific Conference Marine Research and Education 2017. }
+
+\NewPart{Activities}{}
+\begin{itemize}
+ \item
+Rome-Moscow school of Matrix Methods and Applied Linear Algebra 2018. 
+\sepspace
+
+\item
+Rome-Moscow school of Matrix Methods and Applied Linear Algebra 2016.
+
+\end{itemize}
+
+\end{document}
