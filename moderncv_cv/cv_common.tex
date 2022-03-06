@@ -18,29 +18,28 @@
 
 \section{Work Experience}
 
-\cventry{2019-present}{C++ Senior software developer}{{Rock Flow Dynamics}}{}{}
+\cventry{2019-present}{C++ Senior Software Developer}{{Rock Flow Dynamics}}{}{}
 {tNavigator - high-performance tool for integrated static and dynamic modelling from reservoir to surface networks:
   \begin{itemize}
-  \item Worked with team of 15 people, participated in code reviewing and team leading
-  \item Developed numerical methods for fully implicit reservoir simulation and surface network modeling
-  \item Implemented various graph algorithms for surface network modeling
-  \item Participated in development of solver for Sequential Quadratic Programming optimization problem
-  \item Worked with large code base, optimized critical code sections 
-  %\item Developed graph algorithms for surface networks
+  \item Worked with a team of 15 people, participated in code reviewing and team-leading
+  \item Developed robust numerical methods for reservoir simulation and surface network modeling
+  \item Improved stability and calculation time for 50+ models of real oil-gas fields
+  \item Developed optimization methods to satisfy constraints and maximize oil-gas production in fields
+  \item Implemented features increasing modeling functionality (4 releases per year)
   \end{itemize}
 }
 
-\cventry{2016-2019}{R\&D intern}{{Schlumberger}}{}{}
+\cventry{2016-2019}{R\&D Scientist}{{Schlumberger}}{}{}
 {
 \begin{itemize}
- \item Simulated multiphase flow using OpenFoam and fast extension hydraulic fractures
- \item Developed the simulator FastRadialHF for the initiation and propagation hydraulic fractures
- \item Implemented an efficient nonlinear solver for the fully coupled multiphysics matrix
+ \item Developed and validated model of hydraulic fractures driven by wellbore pressure
+ \item Studied multiphase flow in a tube and fast extension hydraulic fractures 
+ \item Implemented an efficient nonlinear solver for the fully coupled multiphysics problem
  \item Wrote article with research results in Q1 scientific journal 
 \end{itemize}
 }
 
-\cventry{2015-2016}{C++ software developer}{{Geometric Modeling and Interactive Systems Research Group}}{}{}
+\cventry{2015-2016}{C++ Software Developer}{{Geometric Modeling and Interactive Systems Research Group}}{}{}
 {
 \begin{itemize}
  \item Developed the software for visualization of satellites navigation
@@ -66,59 +65,63 @@
 \cventry{2015-present}{Multi-scale mathematical modeling of the atmosphere and ocean}{}{}{}
 {INMOM - general ocean circulation model which has been used as the oceanic block of the climate model INMCM. This coupled model is representative at various stages of the international project for comparing climate models CMIP, conducted under the auspices of IPCC.
   \begin{itemize}
-  \item Developed the software architecture separating the physics-related code from features of parallel implementation
-  \item Implemented various hybrid parallel programming patterns using MPI, OpenMP, CUDA
-  \item Developed parallel algorithms for the ocean model 
-  \item Evaluated scaling performances on modern supercomputers
-  \item Literature review of climate change problems
+  \item Developed the software architecture that allows flexibly configuring the ocean model for various computing systems without changing physics-related parts of the program.
+  \item Implemented various hybrid parallel programming patterns (MPI + OpenMP + CUDA) demonstrating close to linear performance scaling on modern supercomputers
+  \item Developed load-balancing methods increasing twice the performance
+  \item Worked closely with geophysicists and other specialists on a new ocean model kernel
   \end{itemize}
 }
 
 \section{Programming Skills}
-\cvcomputer{Programming Languages}{C++ (98/11/17), C, Fortran, Python, Wolfram Mathematica}{Parallel Computing}{Threads, MPI, OpenMP, CUDA}
-\cvcomputer{Development tools}{git, bash, gdb, valgring, vim, VS, ect.}{Build systems}{CMake, Ninja, Jenkins}
-\cvcomputer{Computer Graphics}{OpenSceneGraph, OpenGL, GSL}{Libraries}{STL, Qt, PETSc, OpenFoam, Lapack, BLAS, etc.}
-\cvline{General}{\LaTeX, OOP, test driven development, agile methodology, etc.}
+\cvcomputer{Programming Languages}{C++ (98/11/17), C, Fortran, Python, Wolfram Mathematica}{Parallel Computing}{Threads, MPI, OpenMP, CUDA, Slurm, TAU Performance System}
+\cvcomputer{Development tools}{git, bash, gdb, ssh, sanitizers (asan, tsan), valgring, Qt Creator, Visual Studio, vim, ect.}{Libraries}{STL, Qt, PETSc, Intel MKL (Lapack, BLAS), GSL, OpenFoam, OpenGL, OpenSceneGraph, etc.}
+\cvcomputer{Build systems}{CMake, Ninja, Jenkins}{General}{\LaTeX, OOP, test driven development, agile methodology, etc.}
 
 \clearpage
 
 \section{Languages}
-\cvlanguage{Russian}{Fluent}{}
+\cvlanguage{Russian}{Native}{}
 \cvlanguage{English}{Upper-Intermediate}{}
 
 \section{Publications}
 
-\cvline{}
+\cvlistitem
 {Chaplygin, A. V., Gusev, A. V., Diansky, N. A. High-performance Shallow Water Model for Use on Massively Parallel and Heterogeneous Computing Systems. Supercomputing Frontiers and Innovations, 8(4), 2022}
 
-\cvline{}
+\cvlistitem
 {Fomin, V. V., Panasenkova, I. I., Gusev A. V., Chaplygin, A. V., Diansky, N. A. Operational forecasting system for Arctic Ocean using the Russian marine circulation model INMOM-Arctic. Arctic: Ecology and Economy, vol. 11, no. 2, 2021}
 
-\cvline{}
+\cvlistitem
 {Chaplygin, A.V., Gusev, A.V. Shallow Water Model Using a Hybrid MPI/OpenMP Parallel Programming. Problems of Informatics 1, 2021}
 
-\cvline{}
+\cvlistitem
 {Maxim Chertov, Andrey Chaplygin. Evaluating characteristics of high-rate hydraulic fractures driven by wellbore energy source. Engineering Fracture Mechanics, Volume 222, 2019}
 
-\cvline{}
+\cvlistitem
 {Chaplygin A.V., Diansky N.A., and Gusev A.V. Load balancing using Hilbert space-filling curves for parallel shallow water simulations. Numerical methods and programming. Vol. 20, 2019}
 
-\cvline{}
+\cvlistitem
 {Diansky N.A, Fomin V.V., Grigoriev A.V., Chaplygin A.V., Zatsepin A.G. Spatial-Temporal Variability of Inertial Currents in the Eastern Part of the Black Sea in a Storm Period. Physical Oceanography. Vol. 26, Iss. 2, 2019}
 
 \section{Presentations}
 
-\cvline{}{Shallow water model using a hybrid MPI/OpenMP parallel programming. Mathematical modeling and supercomputer technologies, Nizhny Novgorod, Russia, 2020}
+\cvlistitem
+{Shallow water model using a hybrid MPI/OpenMP parallel programming. Mathematical modeling and supercomputer technologies, Nizhny Novgorod, Russia, 2020}
 
-\cvline{}{A full free surface ocean general circulation model in sigma-coordinates for simulation of the World Ocean circulation and its variability. EGU General Assembly, Vienna, Austria, 2019} 
+\cvlistitem
+{A full free surface ocean general circulation model in sigma-coordinates for simulation of the World Ocean circulation and its variability. EGU General Assembly, Vienna, Austria, 2019} 
 
-\cvline{}{Parallel modeling of nonlinear shallow water equations. 60th MIPT Scientific Conference, Moscow, Russia, 2017}
+\cvlistitem
+{Parallel modeling of nonlinear shallow water equations. 60th MIPT Scientific Conference, Moscow, Russia, 2017}
 
-\cvline{}{Calculation of extreme surge in the Taganrog Bay and the use of atmospheric and ocean circulation models of different spatial resolution. International Scientific Conference Marine Research and Education, Moscow, Russia, 2017}
+\cvlistitem
+{Calculation of extreme surge in the Taganrog Bay and the use of atmospheric and ocean circulation models of different spatial resolution. International Scientific Conference Marine Research and Education, Moscow, Russia, 2017}
 
 \section{Activities}
-\cvline{}{Rome-Moscow school of Matrix Methods and Applied Linear Algebra 2018 (participation)}
-\cvline{}{Rome-Moscow school of Matrix Methods and Applied Linear Algebra 2016 (participation)}
+\cvlistitem
+{Rome-Moscow school of Matrix Methods and Applied Linear Algebra 2018 (participation)}
+\cvlistitem
+{Rome-Moscow school of Matrix Methods and Applied Linear Algebra 2016 (participation)}
 
 \section{Links}
 \cvline{}{\httplink{https://github.com/Andrcraft9}}
